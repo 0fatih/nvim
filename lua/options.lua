@@ -13,6 +13,8 @@ vim.opt.jumpoptions = "stack"
 vim.opt.completeopt = { "menu", "menuone", "noinsert" }
 vim.opt.swapfile = false
 
+vim.api.nvim_set_option("clipboard", "unnamed")
+
 -- Interface
 vim.opt.confirm = true
 vim.opt.splitkeep = "screen"
