@@ -15,7 +15,7 @@ return {
     },
     mappings = {
       edit = "i",
-      expand = { "o", "<LeftMouse>" },
+      expand = { "<C-o>", "<LeftMouse>" },
       open = { "<CR>", "<2-LeftMouse>" },
       remove = "d",
       repl = "r",
