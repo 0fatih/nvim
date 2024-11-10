@@ -137,18 +137,18 @@ return {
 	lazy = false,
 	dependencies = { "nvim-lua/plenary.nvim" },
 	config = config,
-	keys = {
-		keymap.set("n", "<leader>ff", ":Telescope find_files<CR>"),
-		keymap.set("n", "<leader>fg", ":Telescope git_files<CR>"),
-		keymap.set("n", "<leader>fr", ":Telescope oldfiles<CR>"),
-
-		keymap.set("n", "<leader>ft", ":Telescope live_grep<CR>"),
-		keymap.set("n", "<leader>fT", ":Telescope grep_string<CR>"),
-
-		keymap.set("n", "<leader>fl", ":Telescope resume<CR>"),
-
-		keymap.set("n", "<leader>fk", ":Telescope keymaps<CR>"),
-		keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>"),
-		keymap.set("n", "<leader>fb", ":Telescope buffers<CR>"),
-	},
+	-- keys = {
+	-- 	keymap.set("n", "<leader>ff", ":Telescope find_files<CR>"),
+	-- 	keymap.set("n", "<leader>fg", ":Telescope git_files<CR>"),
+	-- 	keymap.set("n", "<leader>fr", ":Telescope oldfiles<CR>"),
+	--
+	-- 	keymap.set("n", "<leader>ft", ":Telescope live_grep<CR>"),
+	-- 	keymap.set("n", "<leader>fT", ":Telescope grep_string<CR>"),
+	--
+	-- 	keymap.set("n", "<leader>fl", ":Telescope resume<CR>"),
+	--
+	-- 	keymap.set("n", "<leader>fk", ":Telescope keymaps<CR>"),
+	-- 	keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>"),
+	-- 	keymap.set("n", "<leader>fb", ":Telescope buffers<CR>"),
+	-- },
 }
