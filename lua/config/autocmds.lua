@@ -1,23 +1,24 @@
 -- auto-format on save
-local lsp_fmt_group = vim.api.nvim_create_augroup("LspFormattingGroup", {})
-vim.api.nvim_create_autocmd("BufWritePre", {
-        group = lsp_fmt_group,
-        callback = function()
-                local efm = vim.lsp.get_active_clients({ name = "efm" })
-
-                if vim.tbl_isempty(efm) then
-                        return
-                end
-
-                vim.lsp.buf.format({ name = "efm", async = true })
-        end,
+vim.api.nvim_create_autocmd("LspAttach", {
+    group = vim.api.nvim_create_augroup("lsp", { clear = true }),
+    callback = function(args)
+        -- 2
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            -- 3
+            buffer = args.buf,
+            callback = function()
+                -- 4 + 5
+                vim.lsp.buf.format({ async = false, id = args.data.client_id })
+            end,
+        })
+    end,
 })
 
 -- highlight on yank
 local highlight_yank_group = vim.api.nvim_create_augroup("HighlightYankGroup", {})
 vim.api.nvim_create_autocmd("TextYankPost", {
-        group = highlight_yank_group,
-        callback = function()
-                vim.highlight.on_yank()
-        end,
+    group = highlight_yank_group,
+    callback = function()
+        vim.highlight.on_yank()
+    end,
 })
