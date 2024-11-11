@@ -1,5 +1,5 @@
 return {
-    "folke/neoconf.nvim",
-    event = "BufReadPre",
-    opts = {},
+	"folke/neoconf.nvim",
+	event = "BufReadPre",
+	opts = {},
 }
