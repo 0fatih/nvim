@@ -1,1 +1,2 @@
-require('config')
+vim.loader.enable()
+require("init")
