@@ -1,4 +1,4 @@
-local mapkey = require("util.keymapper").mapvimkey
+local mapkey = require("keymapper").mapvimkey
 
 -- Buffer Navigation
 mapkey("<leader>bn", "bnext", "n") -- Next buffer
@@ -36,6 +36,22 @@ mapkey("<leader>ng", "Neorg workspace general", "n")
 mapkey("<leader>nw", "Neorg workspace work", "n")
 mapkey("<leader>ny", "Neorg workspace youtube", "n")
 
+-- LSP
+local opts = { noremap = true, silent = true, buffer = bufnr }
+
+mapkey("<leader>fd", "Lspsaga finder", "n", opts) -- go to definition
+mapkey("gd", "Lspsaga peek_definition", "n", opts) -- peak definition
+mapkey("gD", "Lspsaga goto_definition", "n", opts) -- go to definition
+mapkey("<leader>ca", "Lspsaga code_action", "n", opts) -- see available code actions
+mapkey("<leader>rn", "Lspsaga rename", "n", opts) -- smart rename
+mapkey("<leader>X", "Lspsaga show_line_diagnostics", "n", opts) -- show  diagnostics for line
+mapkey("<leader>x", "Lspsaga show_cursor_diagnostics", "n", opts) -- show diagnostics for cursor
+mapkey("[d", "Lspsaga diagnostic_jump_prev", "n", opts) -- jump to prev diagnostic in buffer
+mapkey("]d", "Lspsaga diagnostic_jump_next", "n", opts) -- jump to next diagnostic in buffer
+mapkey("<C-t>", "Lspsaga term_toggle", "n", opts) -- toggle terminal
+mapkey("<leader>o", "Lspsaga outline", "n", opts) -- outline
+mapkey("K", "Lspsaga hover_doc", "n", opts) -- show documentation for what is under cursor
+
 -- Indenting
 vim.keymap.set("v", "<", "<gv", { silent = true, noremap = true })
 vim.keymap.set("v", ">", ">gv", { silent = true, noremap = true })
@@ -52,4 +68,3 @@ api.nvim_set_keymap("n", "<leader>za", ":TZAtaraxis<CR>", {})
 -- Comments
 api.nvim_set_keymap("n", "<C-_>", "gtc", { noremap = false })
 api.nvim_set_keymap("v", "<C-_>", "goc", { noremap = false })
-
